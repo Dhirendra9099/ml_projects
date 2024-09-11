@@ -1,0 +1,41 @@
+<!-- templates/risk_evaluator/result.html -->
+{% extends 'risk_evaluator/base.html' %}
+
+{% block content %}
+<div class="alert alert-info">
+    <h3>Risk Evaluation Result</h3>
+    <p><strong>Risk Level:</strong> {{ risk }}</p>
+    <p><strong>Probability of High Risk:</strong> {{ probability }}</p>
+</div>
+
+<h4>Your Input Data:</h4>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Age</th>
+            <th>Education</th>
+            <th>Sex</th>
+            <th>Smoking</th>
+            <th>Cigarettes/Day</th>
+            <th>BP Meds</th>
+            <th>Stroke</th>
+            <th>Hypertension</th>
+            <th>Diabetes</th>
+            <th>Cholesterol</th>
+            <th>Systolic BP</th>
+            <th>Diastolic BP</th>
+            <th>BMI</th>
+            <th>Heart Rate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            {% for value in input_data %}
+                <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+    </tbody>
+</table>
+
+<a href="{% url 'evaluate_risk' %}" class="btn btn-secondary">Evaluate Another Risk</a>
+{% endblock %}

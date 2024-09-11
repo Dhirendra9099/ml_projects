@@ -1,0 +1,18 @@
+<!-- templates/risk_evaluator/evaluation.html -->
+{% extends 'risk_evaluator/base.html' %}
+
+{% block content %}
+<h3>Model Evaluation Metrics</h3>
+<ul>
+    <li>Precision (Train): {{ metrics.0 }}</li>
+    <li>Precision (Test): {{ metrics.1 }}</li>
+    <li>Recall (Train): {{ metrics.2 }}</li>
+    <li>Recall (Test): {{ metrics.3 }}</li>
+    <li>Accuracy (Train): {{ metrics.4 }}</li>
+    <li>Accuracy (Test): {{ metrics.5 }}</li>
+    <li>ROC AUC (Train): {{ metrics.6 }}</li>
+    <li>ROC AUC (Test): {{ metrics.7 }}</li>
+    <li>F1 Score (Train): {{ metrics.8 }}</li>
+    <li>F1 Score (Test): {{ metrics.9 }}</li>
+</ul>
+{% endblock %}
